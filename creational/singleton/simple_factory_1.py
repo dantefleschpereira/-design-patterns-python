@@ -20,3 +20,11 @@ class VeiculoFactory:
         if tipo == 'popular':
             return CarroPopular()
         assert 0, 'Veículo não existe' 
+
+if __name__ == '__main__':
+    from random import choice
+    carros_disponiveis = ['luxo', 'popular']
+    
+    for i in range(5):
+        carro = VeiculoFactory.get_carro(choice(carros_disponiveis))
+        carro.buscar_cliente()
